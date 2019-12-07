@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Mohammed Amaou | Independent 3D designer`,
+    description: `My 3D designer portfolio`,
+    author: `Mouaad Boukiaou`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -18,13 +18,34 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Mohammed Amaou | Independent 3D designer`,
+        short_name: `Mohammed Amaou`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/icon.png`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Montserrat`,
+            variants: [
+              `100`,
+              `200`,
+              `300`,
+              `400`,
+              `500`,
+              `600`,
+              `700`,
+              `800`,
+              `900`,
+            ],
+          },
+        ],
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
