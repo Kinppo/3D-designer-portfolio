@@ -5,9 +5,10 @@
   width: 100vw;
   position: fixed;
   background-image: linear-gradient(
-    rgba(18, 32, 43, 0.92),
-    rgba(18, 32, 43, 0.92)
-  );
+      rgba(18, 32, 43, 0.92),
+      rgba(18, 32, 43, 0.92)
+    ),
+    url("../images/bg1.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

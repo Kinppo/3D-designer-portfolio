@@ -43,7 +43,8 @@ const Image = () => {
           <Img
             fluid={image.childImageSharp.fluid}
             className="work-img"
-            intrinsicsize="355 x 500"
+            alt="work screenshot"
+            intrinsicsize="350x500"
           />
           <span className="img-info">
             {
