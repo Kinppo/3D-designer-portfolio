@@ -1,7 +1,31 @@
-import React from "react"
+import React, { useState } from "react"
 import "./Form.scss"
 
+const encode = data => {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&")
+}
+
 const Form = () => {
+  const [contact, setState] = useState({
+    name: "",
+    email: "",
+    message: "",
+  })
+
+  const handleSubmit = e => {
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact", ...contact }),
+    })
+      .then(() => alert("Success!"))
+      .catch(error => alert(error))
+
+    e.preventDefault()
+  }
+
   return (
     <form
       name="contact"
@@ -9,6 +33,7 @@ const Form = () => {
       data-netlify="true"
       data-netlify-honeypot="bot-field"
       className="email-form"
+      onSubmit={handleSubmit}
     >
       <input type="hidden" name="form-name" value="contact" />
       <div className="inputs">
@@ -18,6 +43,14 @@ const Form = () => {
           id="name"
           placeholder="Name"
           className="form-input"
+          required
+          value={contact.name}
+          onChange={e => {
+            const val = e.target.value
+            setState(prevState => {
+              return { ...prevState, name: val }
+            })
+          }}
         />
         <input
           type="text"
@@ -25,13 +58,29 @@ const Form = () => {
           id="email"
           placeholder="Email"
           className="form-input"
+          required
+          value={contact.email}
+          onChange={e => {
+            const val = e.target.value
+            setState(prevState => {
+              return { ...prevState, email: val }
+            })
+          }}
         />
         <textarea
           type="text"
           name="message"
           id="message"
           className="form-input"
-          placeholder="Message"
+          placeholder="message"
+          value={contact.message}
+          required
+          onChange={e => {
+            const val = e.target.value
+            setState(prevState => {
+              return { ...prevState, message: val }
+            })
+          }}
         />
       </div>
       <button type="submit" id="submit">
