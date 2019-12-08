@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
+import "./Image.scss"
 
 const Image = () => {
   const [imgInfo] = useState({

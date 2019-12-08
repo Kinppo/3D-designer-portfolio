@@ -1,0 +1,60 @@
+@import "../style/mixins";
+.email-form {
+  text-align: center;
+  padding: 0% 10%;
+  @include mQ(950px) {
+    padding: 0% 4%;
+  }
+
+  .inputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 1em;
+    @include mQ(750px) {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr 3fr;
+    }
+  }
+
+  .form-input {
+    width: 100%;
+    background-color: RGBA(18, 32, 43, 0.6);
+    resize: none;
+    border-radius: 3px;
+    font-size: 18px;
+    box-sizing: border-box;
+    padding: 0.5em;
+  }
+  .form-input::-webkit-input-placeholder {
+    color: #fff;
+  }
+  #name,
+  #email {
+    height: 50px;
+  }
+
+  #message {
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    @include mQ(750px) {
+      grid-row-start: 3;
+      grid-row-end: 4;
+      grid-column-start: 1;
+      grid-column-end: 2;
+    }
+  }
+  #submit {
+    display: inline-block;
+    padding: 0.65em 2em 0.65em 2em;
+    margin-top: 4em;
+    font-size: 16px;
+    font-weight: 400;
+    background: #1897ff;
+    &:hover {
+      background: #299fff;
+    }
+  }
+}

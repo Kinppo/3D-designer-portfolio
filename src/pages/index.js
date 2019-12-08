@@ -1,9 +1,8 @@
 import React from "react"
 import SEO from "../components/seo"
-import Img from "../components/image"
+import Img from "../components/Image"
 import Footer from "../components/Footer"
-import Form from "../components/Form"
-import "./index.css"
+import "./index.scss"
 
 const IndexPage = () => (
   <div>
@@ -16,7 +15,6 @@ const IndexPage = () => (
         <Img />
       </main>
       <Footer />
-      <Form />
     </div>
   </div>
 )

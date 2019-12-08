@@ -1,0 +1,65 @@
+@import "../style/general";
+
+.bg {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  background-image: linear-gradient(
+      rgba(18, 32, 43, 0.92),
+      rgba(18, 32, 43, 0.92)
+    ),
+    url("../images/bg1.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.content {
+  position: absolute;
+  top: 0;
+}
+
+main {
+  width: 80%;
+  margin: 0% 10%;
+  @include mQ(385px) {
+    margin: 0% 4%;
+    width: 92%;
+  }
+}
+
+h1 {
+  font-size: 5.5em;
+  font-weight: 400;
+  color: #fff;
+  text-align: center;
+  margin: 3em 0em 0.2em 0em;
+  font-stretch: ultra-condensed;
+
+  @include mQ(1220px) {
+    font-size: 4.5em;
+  }
+  @include mQ(1000px) {
+    font-size: 3em;
+  }
+  @include mQ(670px) {
+    font-size: 2em;
+  }
+}
+
+h2 {
+  font-size: 4.5em;
+  font-weight: 200;
+  color: #1897ff;
+  text-align: center;
+
+  @include mQ(1220px) {
+    font-size: 3.5em;
+  }
+  @include mQ(1000px) {
+    font-size: 2em;
+  }
+  @include mQ(670px) {
+    font-size: 1.5em;
+  }
+}
