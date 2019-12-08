@@ -28,8 +28,8 @@ const Image = () => {
         nodes {
           id
           childImageSharp {
-            fluid(quality: 100) {
-              ...GatsbyImageSharpFluid
+            fixed(quality: 100, width: 360, height: 500) {
+              ...GatsbyImageSharpFixed
             }
           }
         }
@@ -41,15 +41,14 @@ const Image = () => {
       {data.allFile.nodes.map(image => (
         <div className="img-container" key={image.id}>
           <Img
-            fluid={image.childImageSharp.fluid}
+            fixed={image.childImageSharp.fixed}
             className="work-img"
             alt="work screenshot"
-            intrinsicsize="350x500"
           />
           <span className="img-info">
             {
               imgInfo.info[
-                image.childImageSharp.fluid.src
+                image.childImageSharp.fixed.src
                   .split(/.jpe?g/)
                   .join("")
                   .slice(-1)

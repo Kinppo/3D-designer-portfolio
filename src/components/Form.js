@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import "./Form.scss"
+import Popup from "./Popup"
 
 const encode = data => {
   return Object.keys(data)
@@ -13,6 +14,7 @@ const Form = () => {
     email: "",
     message: "",
   })
+  const [popupState, setPopup] = useState("walo")
 
   const handleSubmit = e => {
     fetch("/", {
@@ -20,8 +22,12 @@ const Form = () => {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({ "form-name": "contact", ...contact }),
     })
-      .then(() => alert("Success!"))
-      .catch(error => alert(error))
+      .then(() => {
+        setPopup("sucess")
+      })
+      .catch(() => {
+        setPopup("error")
+      })
 
     e.preventDefault()
   }
@@ -72,7 +78,7 @@ const Form = () => {
           name="message"
           id="message"
           className="form-input"
-          placeholder="message"
+          placeholder="Message"
           value={contact.message}
           required
           onChange={e => {
@@ -86,6 +92,7 @@ const Form = () => {
       <button type="submit" id="submit">
         SEND
       </button>
+      <Popup type={popupState} setPopup={setPopup} />
     </form>
   )
 }
