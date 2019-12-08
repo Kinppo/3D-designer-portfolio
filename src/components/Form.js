@@ -27,7 +27,9 @@ const Form = () => {
           placeholder="Message"
         />
       </div>
-      <input type="submit" name="submit" id="submit" value="SEND" />
+      <button type="submit" id="submit">
+        SEND
+      </button>
     </form>
   )
 }
