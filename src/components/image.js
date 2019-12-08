@@ -39,12 +39,8 @@ const Image = () => {
   return (
     <div className="grid">
       {data.allFile.nodes.map(image => (
-        <div className="img-container">
-          <Img
-            key={image.id}
-            fluid={image.childImageSharp.fluid}
-            className="work-img"
-          />
+        <div className="img-container" key={image.id}>
+          <Img fluid={image.childImageSharp.fluid} className="work-img" />
           <span className="img-info">
             {
               imgInfo.info[
