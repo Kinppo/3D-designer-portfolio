@@ -3,7 +3,13 @@ import "./Form.scss"
 
 const Form = () => {
   return (
-    <form className="email-form" method="post" name="contact" netlify>
+    <form
+      name="contact"
+      method="POST"
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
+      className="email-form"
+    >
       <div className="inputs">
         <input
           type="text"
