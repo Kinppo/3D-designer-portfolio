@@ -40,7 +40,11 @@ const Image = () => {
     <div className="grid">
       {data.allFile.nodes.map(image => (
         <div className="img-container" key={image.id}>
-          <Img fluid={image.childImageSharp.fluid} className="work-img" />
+          <Img
+            fluid={image.childImageSharp.fluid}
+            className="work-img"
+            intrinsicsize="355 x 500"
+          />
           <span className="img-info">
             {
               imgInfo.info[
