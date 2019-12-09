@@ -1,0 +1,53 @@
+@import "../style/mixins";
+.video-container {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  bottom: 0%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+iframe {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 1200px;
+  height: 730px;
+  @include mQ(1220px) {
+    width: 1000px;
+    height: 630px;
+  }
+  @include mQ(1020px) {
+    width: 800px;
+    height: 530px;
+  }
+  @include mQ(820px) {
+    width: 550px;
+    height: 350px;
+  }
+  @include mQ(570px) {
+    width: 300px;
+    height: 250px;
+  }
+}
+
+.video-close {
+    position: fixed;
+    right: 1rem;
+    top: 1rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 2rem;
+    font-weight: 300;
+    border-radius: 100%;
+    background-color: #747474;
+    z-index: 4;
+    color: #fff;
+    line-height: 2.5rem;
+    text-align: center;
+    cursor: pointer;
+    &:hover{
+        transform: scale(1.05);
+    }
+  }

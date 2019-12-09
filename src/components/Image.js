@@ -1,22 +1,33 @@
 import React, { useState } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
+import Video from "./Video.js"
 import "./Image.scss"
 
 const Image = () => {
-  const [imgInfo] = useState({
-    info: [
-      "Video Editing",
-      "3D Modeling",
-      "Video Editing",
-      "3D Modeling",
-      "Video Editing",
-      "3D Modeling",
-      "Video Editing",
-      "3D Modeling",
-      "Video Editing",
-    ],
-  })
+  const [imgInfo] = useState([
+    "Video Editing",
+    "3D Modeling",
+    "Video Editing",
+    "3D Modeling",
+    "Video Editing",
+    "3D Modeling",
+    "Video Editing",
+    "3D Modeling",
+    "Video Editing",
+  ])
+  const [links] = useState([
+    "https://www.youtube.com/embed/GBQ3OwxoOzo",
+    "https://www.youtube.com/embed/vJ4dfKTEKsA",
+    "https://www.youtube.com/embed/tzU3rII8tyg",
+    "https://www.youtube.com/embed/d4NIoFHqwDQ",
+    "https://www.youtube.com/embed/mZvQ9ipTK_8" ,
+    "https://www.youtube.com/embed/DeumyOzKqgI",
+    "https://www.youtube.com/embed/eVLJ4HOzi1c",
+    "https://www.youtube.com/embed/RB-RcX5DS5A",
+    "https://www.youtube.com/embed/SlPhMPnQ58k",
+  ])
+  const [videoState, setVideo] = useState("")
   const data = useStaticQuery(graphql`
     query {
       allFile(
@@ -39,7 +50,23 @@ const Image = () => {
   return (
     <div className="grid">
       {data.allFile.nodes.map(image => (
-        <div className="img-container" key={image.id}>
+        <div
+          className="img-container"
+          key={image.id}
+          role="button"
+          tabIndex={image.id}
+          onClick={() =>
+            setVideo(
+              links[
+                image.childImageSharp.fixed.src
+                  .split(/.jpe?g/)
+                  .join("")
+                  .slice(-1)
+              ]
+            )
+          }
+          onKeyUp={() => ""}
+        >
           <Img
             fixed={image.childImageSharp.fixed}
             className="work-img"
@@ -47,7 +74,7 @@ const Image = () => {
           />
           <span className="img-info">
             {
-              imgInfo.info[
+              imgInfo[
                 image.childImageSharp.fixed.src
                   .split(/.jpe?g/)
                   .join("")
@@ -57,6 +84,7 @@ const Image = () => {
           </span>
         </div>
       ))}
+      <Video video={videoState} setVideo={setVideo} />
     </div>
   )
 }
