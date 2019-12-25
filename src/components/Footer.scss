@@ -1,13 +1,16 @@
 @import "../style/mixins";
 footer {
   text-align: center;
-  padding: 2% 15% 0% 15%;
   background-color: rgba(28, 50, 67, 0.8);
-  @include mQ(1500px) {
-    padding: 2% 7% 0% 7%;
-  }
-  @include mQ(1200px) {
-    padding: 2% 0% 0% 0%;
+
+  .footer-top {
+    padding: 2% 15% 0% 15%;
+    @include mQ(1500px) {
+      padding: 2% 7% 0% 7%;
+    }
+    @include mQ(1200px) {
+      padding: 2% 0% 0% 0%;
+    }
   }
   h3 {
     font-size: 1.6em;
@@ -20,6 +23,7 @@ footer {
     font-size: 1.25em;
     text-align: justify;
     padding: 0% 10%;
+    color: #fff;
     line-height: 1.6em;
     margin-bottom: 8em;
     @include mQ(950px) {
@@ -27,18 +31,21 @@ footer {
     }
   }
 
-  .footer-flex {
-    padding: 7em 0.5em 1em 0em;
+  .footer-bottom {
+    margin-top: 10em;
+    color: #fff;
+    padding: 1.5em 3em;
     display: flex;
     justify-content: space-between;
-    @include mQ(400px) {
+    align-items: center;
+    @include mQ(720px) {
       display: block;
     }
   }
 
-  .right-side {
-    padding-top: 0.5em;
-    @include mQ(400px) {
+  .right-side,
+  .center-side {
+    @include mQ(720px) {
       margin-top: 2em;
     }
   }

@@ -5,19 +5,21 @@ import "./Footer.scss"
 const Footer = () => {
   return (
     <footer>
-      <h3>ABOUT ME</h3>
-      <p>
-        After nearly five years of taking 3D modeling and design lessons, I
-        moved to start my business as a freelancer. My main specialty is 3d
-        modeling and video editing but I also do works about user interface,
-        user experience, printed materials like business cards, brochures, or
-        posters and finally logos or identity rework. So if you have been seen
-        my work and decided to trust me with one of your projects please do not
-        hesitate to contact me using this button above.
-      </p>
-      <h3>GET IN TOUCH</h3>
-      <Form />
-      <div className="footer-flex">
+      <div className="footer-top">
+        <h3>ABOUT ME</h3>
+        <p>
+          After nearly five years of taking 3D modeling and design lessons, I
+          moved to start my business as a freelancer. My main specialty is 3d
+          modeling and video editing but I also do works about user interface,
+          user experience, printed materials like business cards, brochures, or
+          posters and finally logos or identity rework. So if you have been seen
+          my work and decided to trust me with one of your projects please do
+          not hesitate to contact me using this button above.
+        </p>
+        <h3>GET IN TOUCH</h3>
+        <Form />
+      </div>
+      <div className="footer-bottom">
         <div className="left-side">
           <a
             href="https://www.facebook.com/"
@@ -76,9 +78,10 @@ const Footer = () => {
             </svg>
           </a>
         </div>
-        <div className="right-side">
-          &copy; {new Date().getFullYear()} Mouaad Boukiaou
+        <div className="center-side">
+          &copy; {new Date().getFullYear()} All rights reserved.
         </div>
+        <div className="right-side">Developed By Mouaad Boukiaou</div>
       </div>
     </footer>
   )
