@@ -2,7 +2,7 @@
 A simple Portfolio template for developer/designers built with React and Gatsby. Use it to showcase your work, testimonials and other information to clients.
 
 ## Preview
-<img src="https://i.ibb.co/SsV3Tm4/portfolio2.jpg" alt="previw image" border="0">
+<img src="https://i.ibb.co/3YqCp5y/portfolio2.png" alt="portfolio2" border="0">
 
 ## How to use
 1. Clone/Download the repo.
