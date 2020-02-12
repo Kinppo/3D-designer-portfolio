@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Mohammed Amaou | Independent 3D designer`,
     description: `My 3D designer portfolio`,
-    author: `Mouaad Boukiaou`,
+    author: `MBK`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
