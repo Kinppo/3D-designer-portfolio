@@ -3,7 +3,7 @@
   "private": true,
   "description": "Portfolio for a 3D Designer",
   "version": "0.1.0",
-  "author": "Mouaad Boukiaou <boukiaou.mouaad@gmail.com>",
+  "author": "MBK",
   "dependencies": {
     "gatsby": "^2.18.4",
     "gatsby-image": "^2.2.34",
