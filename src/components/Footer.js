@@ -81,7 +81,7 @@ const Footer = () => {
         <div className="center-side">
           &copy; {new Date().getFullYear()} All rights reserved.
         </div>
-        <div className="right-side">Developed By Mouaad Boukiaou</div>
+        <div className="right-side">Developed By MBK</div>
       </div>
     </footer>
   )
