@@ -39,7 +39,7 @@ const Form = () => {
       data-netlify="true"
       data-netlify-honeypot="bot-field"
       className="email-form"
-      onSubmit={handleSubmit}
+      onSubmit={() => handleSubmit()}
     >
       <input type="hidden" name="form-name" value="contact" />
       <div className="inputs">
